@@ -1,0 +1,9 @@
+forrtl: error (69): process interrupted (SIGINT)
+Image              PC                Routine            Line        Source             
+libc-2.28.so       00007FC02D81EB40  Unknown               Unknown  Unknown
+ecosys.x           00000000004DB28E  Unknown               Unknown  Unknown
+ecosys.x           00000000004C598E  Unknown               Unknown  Unknown
+ecosys.x           00000000005D8905  Unknown               Unknown  Unknown
+ecosys.x           0000000000403A5D  Unknown               Unknown  Unknown
+libc-2.28.so       00007FC02D80AD75  __libc_start_main     Unknown  Unknown
+ecosys.x           000000000040397E  Unknown               Unknown  Unknown

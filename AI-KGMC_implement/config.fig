@@ -1,0 +1,103 @@
+[general]
+ecosys_exe = /projects/bbkc/hutx2309/Ecosys_Version/src/ECOSYS_2021.07.08_update23_19OXKM/bld/ecosys.x
+PFT_dir = /projects/bbkc/hutx2309/Ecosys_Version/PFT_2021/
+ecosys_output  = /projects/bbkc/hutx2309/Ecosys_Version/ecosys_output_define/
+
+#The dir of pre-processed NLDAS database
+NLDAS_database = /taiga/illinois/aces/nres/kaiyug/ASC_datasets/NLDAS_ecosys/
+
+#The dir of gSSURGO database
+gSSURGO_Dir = /taiga/illinois/aces/nres/kaiyug/ASC_datasets/gSSURGO/
+
+#The global DEM and air temperature map that used to extract the site condition
+Global_DEM_file = /taiga/illinois/aces/nres/kaiyug/ASC_datasets/basic_datasets/SRTM_1km.tif
+Global_Ta_file = /taiga/illinois/aces/nres/kaiyug/ASC_datasets/basic_datasets/Ta_Climatology_1991_2020.tif
+
+prj_dir = /work/hdd/bbkc/hutx2309/Midwest_Run2021/
+#
+model_start_year = 1995
+experiment_start_year = 2008
+experiment_end_year = 2022
+
+[Surrogate_model_Dir]
+SampleRuns_Dir = /work/hdd/bbkc/hutx2309/Midwest_Run2021/sample4JAMES/
+SurrogateModel_Dir = /work/hdd/bbkc/hutx2309/Midwest_Run2021/surrogate_model_JAMES/
+
+[Calibration_Dir]
+
+Input_Dir = /work/hdd/bbkc/hutx2309/Midwest_Run2021/
+Output_Dir = /work/hdd/bbkc/hutx2309/Midwest_Run2021/calib_r22_MN/
+
+
+[Forward_Simulation]
+Input_Dir = /work/hdd/bbkc/yizhi/carbon_input_database/
+ 
+
+[CropID]
+1 = maiz31
+4 = sorghum
+5 = soyb31
+23 = swheat
+28 = oat
+24 = wwheat
+36 = alfa43
+176 = agrass
+-1 = ryegrass
+
+[plant_density]
+maiz31 = 7.5
+soyb31 = 37.1
+sorghum = 20
+swheat = 350
+wwheat = 350
+oat = 250
+alfa43 = 500
+pgrass = 500
+agrass = 500
+ryegrass = 400
+
+[Harvested]
+maiz31 = YES
+soyb31 = YES
+sorghum = YES
+wwheat = YES
+oat = YES
+alfa43 = NO
+pgrass = NO
+agrass = NO
+ryegrass = NO
+
+[Calibrated_parameters]
+nsamples = 10000
+ 
+maiz31 = {'CHL':[0.01,0.06],'GROUPX':[8,22],'STMX':[0.5, 5.0],'SDMX':[1, 10]}
+soyb31 = {'CHL':[0.01,0.06],'GROUPX':[8,22],'STMX':[0.5, 5.0],'SDMX':[1, 8]}
+
+[scales]
+v_max = {'GPP':40,'ET':15,'LAI':8,'Yield':600,
+         'RADN':40,'TMAX_AIR':50,'TMIN_AIR':50,'HMAX_AIR':10,'HMIN_AIR':10,'WIND':1200,'PRECN':200,
+         'CHL4':0.05,'CHL':0.06,'VCMX':90,'GROUPX':22,'STMX': 5,'SDMX':10,'GFILL':0.5E-03,
+         'Plant_DOY':365,'Harvest_DOY':365,'DOY':365,'N_fertilizer':20,'P_fertilizer':15,'Irrigation':1,
+         'BKDS':2,'SOC':60,'CSAND':1000,'CSILT':1000,'FC':1,'WP':1,'SCNV':100,'PH':8,'CEC':40,
+         'Till_Dep': 0.3, 'Till_Mix': 20.0}
+
+v_min = {'GPP':0,'ET':0,'LAI':0,'Yield':0,
+         'RADN':0,'TMAX_AIR':-50,'TMIN_AIR':-50,'HMAX_AIR':0,'HMIN_AIR':0,'WIND':0,'PRECN':0,
+         'CHL4':0.01,'CHL':0.01,'VCMX':10,'GROUPX':8,'STMX':0.5,'SDMX':1,'GFILL':0.005E-03,
+         'Plant_DOY':0,'Harvest_DOY':0,'DOY':0,'N_fertilizer':0,'P_fertilizer':0,'Irrigation':0,
+         'BKDS':0,'SOC':0,'CSAND':0,'CSILT':0,'FC':0,'WP':0,'SCNV':0,'PH':4,'CEC':0,
+         'Till_Dep': 0.0, 'Till_Mix': 0.0}
+
+
+[yield_convert_factor]
+#the factor convert gC/m2  to bu/acre
+#convert_index_corn = 1/0.44/(1-0.156)*0.00220462/56/0.000247105
+maiz31 = 0.42901162420888045
+#convert_index_sorghums = 1/0.43/(1-0.13)*0.00220462/56/0.000247105
+sorghum = 0.4258694380278264
+#convert_index_soybeans = 1/0.54/(1-0.13)*0.00220462/60/0.000247105
+soyb31 = 0.316510372460187
+#convert_index_wheats = 1/0.4/(1-0.135)*0.00220462/60/0.000247105
+swheat = 0.4297588814502771
+wwheat = 0.4297588814502771
+oat = 0.4297588814502771
